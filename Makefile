@@ -38,7 +38,6 @@ deb:
 .PHONY: rpm
 rpm:
 		rm -f beamium*.rpm
-		mkdir -p opt/beamium
 		fpm -m "<kevin@d33d33.fr>" \
 		  --description "Prometheus to Warp10 metrics forwarder" \
 			--url "https://github.com/runabove/beamium" \
@@ -58,8 +57,7 @@ rpm:
 			--after-upgrade rpm/after-upgrade.sh \
 			--before-remove rpm/before-remove.sh \
 			--after-remove rpm/after-remove.sh \
-			--inputs rpm/input \
-			--rpm-auto-add-directories opt/beamium
+			--inputs rpm/input
 
 .PHONY: clean
 clean:

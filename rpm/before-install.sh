@@ -1,6 +1,6 @@
 #!/bin/bash
 useradd beamium
-mkdir /opt/beamium
+mkdir -p /opt/beamium
 chown -R beamium:beamium /opt/beamium
-mkdir /var/log/beamium
+mkdir -p /var/log/beamium
 chown -R beamium:beamium /var/log/beamium
