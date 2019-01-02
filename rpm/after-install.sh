@@ -1,5 +1,6 @@
 #!/bin/bash
 chkconfig --add beamium
+chown -R beamium:beamium /opt/beamium
 cat << EOF > /etc/logrotate.d/beamium
 /var/log/beamium/beamium.log /var/log/beamium/beamium.out /var/log/beamium/beamium.err {
   daily

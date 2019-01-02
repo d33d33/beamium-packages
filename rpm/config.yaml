@@ -1,5 +1,5 @@
-sources:
-  source1:
+scrapers:
+  scraper1:
     url: http://127.0.0.1:9100/metrics
     period: 10000
 
