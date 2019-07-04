@@ -13,9 +13,9 @@ deb:
 		rm -f beamium*.deb
 		fpm -m "<kevin@d33d33.fr>" \
 		  --description "Prometheus to Warp10 metrics forwarder" \
-			--url "https://github.com/runabove/beamium" \
+			--url "https://github.com/ovh/beamium" \
 			--license "BSD-3-Clause" \
-			--version $(shell echo $$(./build/beamium --version | awk '{print $$2}')-$$(lsb_release  -cs)) \
+			--version $(shell echo $$(./build/beamium --version | head -n 1 | awk '{print $$3}')-$$(lsb_release  -cs)) \
 			-n beamium \
 			-d logrotate \
 			-s dir -t deb \
@@ -40,9 +40,9 @@ rpm:
 		rm -f beamium*.rpm
 		fpm -m "<kevin@d33d33.fr>" \
 		  --description "Prometheus to Warp10 metrics forwarder" \
-			--url "https://github.com/runabove/beamium" \
+			--url "https://github.com/ovh/beamium" \
 			--license "BSD-3-Clause" \
-			--version $(shell echo $$(./build/beamium --version | awk '{print $$2}')) \
+			--version $(shell echo $$(./build/beamium --version | head -n 1 | awk '{print $$3}')) \
 			-n beamium \
 			-d logrotate \
 			-s dir -t rpm \
